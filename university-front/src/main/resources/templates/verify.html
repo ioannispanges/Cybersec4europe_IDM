@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Get Policy</title>
+  <link th:href="@{/css/login1.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+<!--        <script>window.confirm("Do you have Credential to su");</script>-->
+        <!--        alert('You are going to Verify your Credentials');
+         alert("${name}");-->
+        <h4> Verify </h4>
+
+<!--        <script language="javascript">-->
+
+<!--          timer=setTimeout("window.open('http://localhost:8080/verify','width=550,height=400')",10000);-->
+
+<!--           timer=setTimeout("window.close('http://localhost:8080/getpolicy','width=550,height=400')",10000)-->
+
+<!--        </script>-->
+        <form th:action="@{/authenticate}" method="post"
+              th:object="${loginRequest}">
+        <h4> <label class="html-editor" th:text="${username}"/> </h4>
+<!--        <h4> <label class="html-editor" th:text="${universityname}"/> </h4>-->
+<!--        <h4> <label class="html-editor" th:text="${organizationcountry}"/> </h4>-->
+            <h5>You have successfully verified your PhD/MSc research application <img src="/image/tick.png" width="50" height="50"/></h5>
+            <h4> <label class="html-editor-paste" th:text="${policy}"></label> </h4>
+            <div class="button_container">
+<!--            <button onclick="self.close()">Close</button>-->
+                <input class="button" onclick="self.close()" value="Close Window"/>
+            </div>
+        </form>
+      </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
